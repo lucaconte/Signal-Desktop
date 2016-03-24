@@ -49,9 +49,12 @@
             }
         });
     });
-
-    var SERVER_URL = 'https://textsecure-service-staging.whispersystems.org';
-    var ATTACHMENT_SERVER_URL = 'https://whispersystems-textsecure-attachments-staging.s3.amazonaws.com';
+    
+//[LC] qui si attacca il server locale
+    //var SERVER_URL = 'https://textsecure-service-staging.whispersystems.org';
+    var SERVER_URL = 'https://signal.sinesy.it:8080';
+    //var ATTACHMENT_SERVER_URL = 'https://whispersystems-textsecure-attachments-staging.s3.amazonaws.com';
+    var ATTACHMENT_SERVER_URL = 'https://sinsignalstorageservice.s3-website-eu-west-1.amazonaws.com';
     var messageReceiver;
     window.getSocketStatus = function() {
         if (messageReceiver) {

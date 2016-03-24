@@ -119,12 +119,14 @@ module.exports = function(grunt) {
         files: [{ expand: true, dest: 'dist/', src: ['<%= dist.src %>'] }],
         options: {
           process: function(content, srcpath) {
+                  //[LC] here for avoiding testing2production substitution
             if (srcpath.match('background.js')) {
-              return content.replace(
-                /textsecure-service-staging.whispersystems.org/g,
-                'textsecure-service-ca.whispersystems.org:4433').replace(
-                /whispersystems-textsecure-attachments-staging.s3.amazonaws.com/g,
-                'whispersystems-textsecure-attachments.s3.amazonaws.com');
+                    return content;
+             // return content.replace(
+             //   /textsecure-service-staging.whispersystems.org/g,
+              //  'textsecure-service-ca.whispersystems.org:4433').replace(
+             //   /whispersystems-textsecure-attachments-staging.s3.amazonaws.com/g,
+             //   'whispersystems-textsecure-attachments.s3.amazonaws.com');
             } else {
               return content;
             }
